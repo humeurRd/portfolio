@@ -13,6 +13,10 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+      
+      <!-- JQUERI -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js"></script>
+        
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
@@ -40,7 +44,23 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="./assets/2.png" alt="..." style="height: auto; width: 600px;">
+                <img class="masthead-avatar mb-2" src="./assets/2.png" alt="..." style="height: auto; width: 400px;">
+              
+                <!-- canvas agregado-->
+               
+                <canvas id="born_canvas" width="640" height="480">Missing the canvas </canvas>
+                <div id="hidden_canvas" >
+                    <canvas id="born_canvas_hidden" width="100" height="100" style="
+                    display:none"></canvas>
+            
+                <br>
+                <ul style="padding: 5px; list-style: none;">
+                    <li><input type="radio" name="radio1"  id="radio_Low" onmousedown="javascript:setMinNumCircles()"   checked="true"> velocidad: Rapida</li>
+                    <li ><input type="radio" name="radio1" id="radio_High" onmousedown="javascript:setHighNumCircles()"> velocidad: lenta</li>
+                </ul>
+                </div>
+            
+               
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
