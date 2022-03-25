@@ -8,6 +8,7 @@
 //
 
 window.addEventListener('DOMContentLoaded', event => { // Navbar shrink function
+   
     var navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
         if (!navbarCollapsible) {
@@ -20,6 +21,9 @@ window.addEventListener('DOMContentLoaded', event => { // Navbar shrink function
         }
 
     };
+
+ 
+
 
     // Shrink the navbar
     navbarShrink();
@@ -199,7 +203,6 @@ function draw() {
     clear();
 
     var i;
-
     for (i = 0; i < carray.length; i++) {
         var C = carray[i];
 
@@ -212,21 +215,13 @@ function draw() {
             C.y += C.vy + nGeneralWindY;
             if (bGravity)
                 C.vy += 1.0;
-
-
             if (bFade)
                 C.alpha *= (.9 + C.alpha) * .98
-
-
-
             if (C.alpha < 0)
                 C.alpha = 0;
-
-
-        } nGeneralWindX *= .9999;
+        } 
+        nGeneralWindX *= .9999;
         nGeneralWindY *= .9999;
-
-
         if (C.x < 0) {
             C.x = - C.x;
             C.vx = - C.vx;
@@ -243,25 +238,19 @@ function draw() {
             C.y = HEIGHT - (C.y - HEIGHT);
             C.vy = - C.vy * .45;
         }
-
-
         g.globalAlpha = C.alpha;
         g.beginPath();
         g.fillStyle = "#FFFFFF";
         g.arc(C.x, C.y, C.r, 0, Math.PI * 2, true);
         g.closePath();
         g.fill();
-
     }
-
-
 }
 
 function imagesLoaded() {
     for (i = 0; i < 26; i++) {
         if (!arr_ImageLetters[i].complete)
             return false
-
     }
     setTimeout(startClearCircles, 1500);
     setInterval(setNextLetter, 3000);
@@ -274,7 +263,6 @@ function clear() {
     g.fillRect(0, 0, WIDTH, HEIGHT)
 }
 
-
 function setHighNumCircles() {
     NUM_CIRCLES = 1500;
     bHighRes = true;
@@ -285,9 +273,6 @@ function setHighNumCircles() {
     RADIUS = 3;
     for (i = 0; i < NUM_CIRCLES; i++)
         carray[i] = new Circle(Math.floor(Math.random() * WIDTH), Math.floor(Math.random() * HEIGHT), RADIUS)
-
-
-
 }
 
 function setMinNumCircles() {
@@ -300,9 +285,6 @@ function setMinNumCircles() {
     carray = new Array();
     for (i = 0; i < NUM_CIRCLES; i++)
         carray[i] = new Circle(Math.floor(Math.random() * WIDTH), Math.floor(Math.random() * HEIGHT), RADIUS)
-
-
-
 }
 
 function setGravity() {
