@@ -1,19 +1,13 @@
 class Router {
-    /**
-     * Metodo inicial.
-     *
-     * @return {void}.
-     */
+    // Metodo inicial.
+     
     constructor(paths) {
         this.paths = paths;
         this.initRouter();
     }
 
-    /**
-     * Permite inicializar el router
-     *
-     * @return {void}.
-     */
+    // Permite inicializar el router
+  
     initRouter() {
         const {
             location: {
@@ -24,22 +18,15 @@ class Router {
         this.load(URI);
     }
 
-    /**
-     * Permite iniciar la carga de paginas.
-     *
-     * @return {void}.
-     */
+     // inicializa la carga de las paginas.
+    
     load(page = "home") {
         const { paths } = this;
         const { path, template } = paths[page] || paths.error;
         const $CONTAINER = document.querySelector("#content");
         $CONTAINER.innerHTML = template;
-        window.history.pushState({}, "Genial", path);
+        window.history.pushState({}, "Funciona", path);
     }
-
-
-
-    
 
 }
 

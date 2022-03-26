@@ -1,3 +1,4 @@
+//objeto con los paths y el contenido que se cargara en cada uno
 const PATHS = {
     home: {
         path: "/",
